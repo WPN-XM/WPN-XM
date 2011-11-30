@@ -1,0 +1,12 @@
+WPN-XM Changelog
+
+Version 0.1 - 12. November 2011
+
+    - created and set up website wpn-xm.org
+    - layed out a directory structure for the project
+    - selected components	
+    - base for wpn-xm server control tray app
+    - base for wpn-xm webinterface
+    - two ISS files for standalone and bundled distribution
+
+Version 0.2 - tbc
