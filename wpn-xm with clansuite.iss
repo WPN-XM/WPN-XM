@@ -132,12 +132,15 @@ const
   //DEBUG = true;
 
   // Define download URLs for the software packages
+  // Warning: Watch the protocol (Use http, not https!), if you add download links pointing to github. 
   URL_nginx             = 'http://www.nginx.org/download/nginx-1.1.7.zip';
   URL_php               = 'http://windows.php.net/downloads/releases/php-5.3.8-nts-Win32-VC9-x86.zip';
   URL_mariadb           = 'http://mirror2.hs-esslingen.de/mariadb/mariadb-5.3.2-beta/win2008r2-vs2010-i386-packages/mariadb-5.3.2-beta-win32.zip';
   URL_phpext_xdebug     = 'http://xdebug.org/files/php_xdebug-2.1.2-5.3-vc9-nts.dll';
   URL_webgrind          = 'http://webgrind.googlecode.com/files/webgrind-release-1.0.zip';
-  URL_xhprof            = 'http://nodeload.github.com/facebook/xhprof/zipball/master';
+  // Leave the original url of xhprof in here ! we are fetching from paul reinheimers fork !
+  //URL_xhprof          = 'http://nodeload.github.com/facebook/xhprof/zipball/master';
+  URL_xhprof            = 'http://nodeload.github.com/preinheimer/xhprof/zipball/master';
   URL_memcached         = 'http://downloads.northscale.com/memcached-1.4.5-x86.zip';
   URL_phpext_memcached  = 'http://downloads.php.net/pierre/php_memcache-2.2.6-5.3-vc9-x86.zip';
   URL_phpmyadmin        = 'http://netcologne.dl.sourceforge.net/project/phpmyadmin/phpMyAdmin/3.4.6/phpMyAdmin-3.4.6-english.zip';
@@ -233,7 +236,7 @@ begin
     end else
     begin
       // using this path, the downloaded components are not deleted after installation
-      targetPath := expandconstant('c:\serverpack\');
+      targetPath := expandconstant('c:\wpnxm-downloads\');
     end;
 
     // add files to download handler
@@ -370,8 +373,13 @@ begin
 
   if Pos('xhprof', selectedComponents) > 0 then
   begin
-     // xhprof - rename "facebook-xhprof-gitref" directory
-    Exec('cmd.exe', '/c "move ' + ExpandConstant('{app}\www\facebook-xhprof*') + '  ' + ExpandConstant('{app}\www\xhprof') + '"',
+    // deactivated, because we are fetching from preinheimer's fork, see below
+    // xhprof - rename "facebook-xhprof-gitref" directory
+    //Exec('cmd.exe', '/c "move ' + ExpandConstant('{app}\www\facebook-xhprof*') + '  ' + ExpandConstant('{app}\www\xhprof') + '"', 
+    //'', SW_SHOW, ewWaitUntilTerminated, ReturnCode);
+
+    // xhprof - rename "preinheimer-xhprof-gitref" directory
+    Exec('cmd.exe', '/c "move ' + ExpandConstant('{app}\www\preinheimer-xhprof*') + '  ' + ExpandConstant('{app}\www\xhprof') + '"', 
     '', SW_SHOW, ewWaitUntilTerminated, ReturnCode);
   end;
 
