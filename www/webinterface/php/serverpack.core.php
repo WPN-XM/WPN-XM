@@ -36,13 +36,30 @@
 class Wpnxm_Serverpack
 {
     /**
+     * Defines the following Path Constants
+     * 
+     * WPNXM_DIR     -> wpn-xm/ Root Folder (bin, configs, ....)
+     * WPNXM_WWW_DIR -> wpn-xm/www
+     * WPNXM_PHP_DIR -> wpn-xm/www/webinterface
+     */
+    public static function defineDirectories()
+    {
+        if(!defined('WPNXM_DIR'))
+        {
+            define('WPNXM_DIR', dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR);
+            define('WPNXM_WWW_DIR', WPNXM_DIR . 'www' . DIRECTORY_SEPARATOR); 
+            define('WPNXM_PHP_DIR', WPNXM_WWW_DIR . 'webinterface/php' . DIRECTORY_SEPARATOR);
+        }        
+    }
+    
+    /**
      * Returns the base directory / installation folder of the WPИ-XM Serverpack.
      *
      * @return string Base directory of the WPИ-XM Serverpack.
      */
     public static function getBaseDir()
-    {
-        return dirname(dirname(__DIR__));
+    {        
+        return WPNXM_WWW_DIR;        
     }
 
     public static function get_MySQL_datadir()

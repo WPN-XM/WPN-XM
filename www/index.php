@@ -1,8 +1,8 @@
 <?php
-define('WPNXM_WWW_DIR', __DIR__ . DIRECTORY_SEPARATOR . 'webinterface' . DIRECTORY_SEPARATOR);
-include WPNXM_WWW_DIR . 'serverpack.core.php';
-include WPNXM_WWW_DIR . 'projects.core.php';
-include WPNXM_WWW_DIR . 'menu.core.php';
+include __DIR__ . '/webinterface/php/serverpack.core.php';
+Wpnxm_Serverpack::defineDirectories();
+include WPNXM_PHP_DIR . 'projects.core.php';
+include WPNXM_PHP_DIR . 'menu.core.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -16,59 +16,60 @@ include WPNXM_WWW_DIR . 'menu.core.php';
     <link rel="stylesheet" href="webinterface/css/style.css" type="text/css" media="screen, projection" />
 </head>
 <body>
-	    <!-- container-for-centering -->
-    <div class="page-centered">
+<!-- container-for-centering -->
+<div class="page-centered">
 
-        <!-- Main -->
-        <div class="center">
+    <!-- Main -->
+    <div class="center">
 
-            <!-- Headline -->
-            <h1 class="headline">
-                WPИ-XM<br/>
-                Serverstack for Windows<br/>
-                <small>Version 0.2</small>
-            </h1>
+        <!-- Headline -->
+        <h1 class="headline">
+            WPИ-XM<br/>
+            Serverstack for Windows<br/>
+            <small>Version 0.2</small>
+        </h1>
 
-            <div class="content-centered">
+        <div class="content-centered">
 
             <!-- Top Menu Navigation -->
             <?php Menu::render(); ?>
 
-	<!-- Welcome Message -->
-	<div id="content" style="font-family: 'Lucida Grande',Verdana,Arial,Sans-Serif;">
-	    <h1>Welcome to the WPИ-XM server stack!</h1>
-	</div>
+            <!-- Welcome Message -->
+            <div id="content" style="font-family: 'Lucida Grande',Verdana,Arial,Sans-Serif;">
+                <h1>Welcome to the WPИ-XM server stack!</h1>
+            </div>
 
-	<div class="right-box">
+            <div class="right-box">
 
-		<?php $projects = new Projects(); ?>
+                <?php $projects = new Projects(); ?>
 
-		<div class="cs-message">
+                <div class="cs-message">
 
-			<!-- Widget: Projects (scanned project paths / www folder) -->
-			<div class="cs-message-content">
-				<h2>Projects (<?php echo $projects->getNumberOfProjects(); ?>)</h2>
-				<?php $projects->listProjects(); ?>
-			</div>
+                    <!-- Widget: Projects (scanned project paths / www folder) -->
+                    <div class="cs-message-content">
+                        <h2>Projects (<?=$projects->getNumberOfProjects();?>)</h2>
+                        <?php $projects->listProjects();?>
+                    </div>
 
-			<!-- Widget: Tools (selected set of paths / www folder) -->
-			<div class="cs-message-content">
-				<h2>Tools (<?php echo $projects->getNumberOfTools(); ?>)</h2>
-				<?php $projects->listTools(); ?>
-			</div>
-		</div>
+                    <!-- Widget: Tools (selected set of paths / www folder) -->
+                    <div class="cs-message-content">
+                        <h2>Tools (<?= $projects->getNumberOfTools(); ?>)</h2>
+                        <?=$projects->listTools();?>
+                    </div>
+                </div>
 
-	</div>
+            </div>
 
-<br class="clear" />
+            <br class="clear" />
 
-<div id="footer">
-    <hr class="footer-line"/>
-    <p>&copy; 2010-<?php echo date("Y"); ?> by Jens-Andr&#x00E9; Koch Softwaresystemtechnik.
-        <br />
-    </p>
+            <div id="footer">
+                <hr class="footer-line"/>
+                <p>&copy; 2010-<?php echo date("Y"); ?> by Jens-Andr&#x00E9; Koch Softwaresystemtechnik.
+                    <br />
+                </p>
+            </div>    
+        </div>
+    </div>
 </div>
-
-</div><!-- END centering-->
 </body>
 </html>

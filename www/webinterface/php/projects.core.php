@@ -70,7 +70,7 @@ class Projects
     public function listTools()
     {
         foreach($this->toolDirectories as $dir => $href)
-        {
+        {                       
             if($href =='')
             {
                 echo '<li><a class="folder" href="' . $dir . '">' . $dir . '</a></li>';
@@ -78,6 +78,24 @@ class Projects
             else
             {
                 echo '<li><a class="folder" href="' . $href . '">' . $dir . '</a></li>';
+            }            
+        }
+    }
+    
+    /**
+     * tools directories are hardcoded.
+     * because we don't know which ones the user installed,
+     * we check for existence.
+     * if a tool dir is not there, remove it from the list
+     * this affects the counter
+     */
+    public function checkWhichToolDirectoriesAreInstalled()
+    {
+        foreach($this->toolDirectories as $dir => $href)
+        {
+            if(is_dir(WPNXM_WWW_DIR . $dir) === false)
+            {                 
+                unset($this->toolDirectories[$dir]);
             }
         }
     }
@@ -89,6 +107,7 @@ class Projects
 
     public function getNumberOfTools()
     {
+        $this->checkWhichToolDirectoriesAreInstalled();
         return count($this->toolDirectories);
     }
 }
