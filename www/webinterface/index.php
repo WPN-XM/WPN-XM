@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . DIRECTORY_SEPARATOR . 'serverpack.core.php';
+include __DIR__ . DIRECTORY_SEPARATOR . 'menu.core.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -28,6 +29,9 @@ include __DIR__ . DIRECTORY_SEPARATOR . 'serverpack.core.php';
             </h1>
 
             <div class="content-centered">
+ 
+            <!-- Top Menu Navigation -->
+            <?php Menu::render(); ?>
 
             <!-- Server Software (left box) -->
             <div class="server-software-left-box">
@@ -302,7 +306,7 @@ include __DIR__ . DIRECTORY_SEPARATOR . 'serverpack.core.php';
 <br class="clear" />
 
 <div id="footer">
-    <hr class="footer-line" />
+    <hr class="footer-line"/>
     <p>&copy; 2010-<?php echo date("Y"); ?> by Jens-Andr&#x00E9; Koch Softwaresystemtechnik.
         <br />
     </p>
