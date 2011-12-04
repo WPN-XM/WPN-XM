@@ -7,7 +7,6 @@ include WPNXM_WWW_DIR . 'menu.core.php';
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  	<head>
     <meta charset="utf-8" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>WPИ-XM Serverstack for Windows</title>
