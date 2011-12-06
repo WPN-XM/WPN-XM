@@ -1,5 +1,5 @@
 //
-//    WPN-XM Serverpack
+//    WPN-XM Server Stack
 //
 //    WPN-XM is a free and open-source web server solution stack for 
 //    professional PHP development on the Windows platform.
@@ -22,8 +22,8 @@
 
 [Setup]
 AppId={{8E0B8E63-FF85-4B78-9C7F-109F905E1D3B}}
-AppName=WPN-XM Serverpack
-AppVerName="WPN-XM Serverpack 0.1"
+AppName=WPN-XM Server Stack
+AppVerName="WPN-XM Server Stack 0.1"
 AppVersion=0.1
 AppPublisher="Jens-André Koch"
 AppCopyright=© Jens-André Koch
@@ -32,7 +32,7 @@ AppSupportURL="https://github.com/jakoch/WPN-XM/issues/"
 AppUpdatesURL="http://wpn-xm.org"
 // default installation folder is "c:\server". but user might change this via dialog.
 DefaultDirName={sd}\server
-DefaultGroupName="WPN-XM Serverpack"
+DefaultGroupName="WPN-XM Server Stack"
 OutputBaseFilename="WPNXM-0.1"
 Compression=lzma/ultra
 InternalCompressLevel=max
@@ -51,14 +51,14 @@ Name: de; MessagesFile: compiler:languages\German.isl
 
 [Types]
 Name: "full"; Description: "Full installation"
-Name: "serverpack"; Description: "Serverpack with Administration Tools"
-Name: "debug"; Description: "Serverpack with Debugtools"
+Name: "serverstack"; Description: "Server Stack with Administration Tools"
+Name: "debug"; Description: "Server Stack with Debugtools"
 Name: "custom"; Description: "Custom installation"; Flags: iscustom
 
 [Components]
-Name: "serverpack"; Description: "Base of the WPN-XM Serverpack (Nginx & PHP & MariaDb)"; ExtraDiskSpaceRequired: 155000000; Types: full serverpack debug custom; Flags: fixed
-Name: "webinterface"; Description: "WPN-XM - Webinterface for Serveradministration"; ExtraDiskSpaceRequired: 500000; Types: full serverpack debug
-Name: "consoleinterface"; Description: "WPN-XM - Tray App for Serveradministration"; ExtraDiskSpaceRequired: 500000; Types: full serverpack debug
+Name: "serverstack"; Description: "Base of the WPN-XM Server Stack (Nginx & PHP & MariaDb)"; ExtraDiskSpaceRequired: 155000000; Types: full serverstack debug custom; Flags: fixed
+Name: "webinterface"; Description: "WPN-XM - Webinterface for Serveradministration"; ExtraDiskSpaceRequired: 500000; Types: full serverstack debug
+Name: "consoleinterface"; Description: "WPN-XM - Tray App for Serveradministration"; ExtraDiskSpaceRequired: 500000; Types: full serverstack debug
 Name: "xdebug"; Description: "Xdebug - PHP Extension for Debugging"; ExtraDiskSpaceRequired: 300000; Types: full debug
 Name: "webgrind"; Description: "Webgrind - Xdebug profiling web frontend"; ExtraDiskSpaceRequired: 500000; Types: full debug
 Name: "xhprof"; Description: "XhProfiler - Hierarchical Profiler for PHP"; ExtraDiskSpaceRequired: 800000; Types: full debug
@@ -106,7 +106,7 @@ Filename: "{tmp}\cleanup-mysql-5.5.15-win32.bat"; Parameters: "{app}\bin\mariadb
 //Filename: "{app}\SETUP.EXE"; Parameters: "/x"
 // User selected... these files are shown for launch after everything is done
 //Filename: "{app}\README.TXT"; Description: "View the README file"; Flags: postinstall shellexec skipifsilent
-//Filename: "{app}\SETUP.EXE"; Description: "Configure Serverpack"; Flags: postinstall nowait skipifsilent unchecked
+//Filename: "{app}\SETUP.EXE"; Description: "Configure Server Stack"; Flags: postinstall nowait skipifsilent unchecked
 
 [INI]
 ;Filename: {app}\php\php.ini,Section: PHP; Key: extenson; String: php_pdo_mysql.dll; Components: ;
@@ -114,8 +114,8 @@ Filename: "{tmp}\cleanup-mysql-5.5.15-win32.bat"; Parameters: "{app}\bin\mariadb
 [CustomMessages]
 de.WebsiteLink=http://wpn-xm.org
 en.WebsiteLink=http://wpn-xm.org
-de.RemoveApp=WPN-XM Serverpack deinstallieren
-en.RemoveApp=Uninstall WPN-XM Serverpack
+de.RemoveApp=WPN-XM Server Stack deinstallieren
+en.RemoveApp=Uninstall WPN-XM Server Stack
 
 [Dirs]
 Name: "{app}\www"
@@ -188,7 +188,7 @@ begin
   // when debug enabled, do a one-time download of all components to a local folder
   if (DEBUG = true) and (FileExists(expandconstant('c:\wpnxm-downloads\nginx.zip')) = false) then
   begin
-    // re-create the serverpack folder
+    // re-create the server stack folder
     if not DirExists(ExpandConstant('c:\wpnxm-downloads')) then ForceDirectories(ExpandConstant('c:\wpnxm-downloads'));
     // Initialize InnoTools Download Helper
     itd_init;
@@ -234,7 +234,7 @@ begin
 
     // add files to download handler
 
-    if IsComponentSelected('serverpack') then
+    if IsComponentSelected('serverstack') then
     begin
       itd_addfile(URL_nginx, expandconstant(targetPath + Filename_nginx));
       itd_addfile(URL_php, expandconstant(targetPath + Filename_php));
@@ -289,7 +289,7 @@ begin
   if not DirExists(ExpandConstant('{app}\bin')) then ForceDirectories(ExpandConstant('{app}\bin'));
   if not DirExists(ExpandConstant('{app}\www')) then ForceDirectories(ExpandConstant('{app}\www'));
 
-  // always unzip the serverpack base
+  // always unzip the serverstack base
 
   DoUnzip(targetPath + Filename_nginx, ExpandConstant('{app}\bin')); // no subfolder, because nginx brings own dir
 
