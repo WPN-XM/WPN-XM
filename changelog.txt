@@ -1,12 +1,59 @@
-WPN-XM Changelog
+                         ___________
+                         W P N - X M
 
-Version 0.1 - 12. November 2011
+ÄNDERUNGSHISTORIE | CHANGELOG
 
-    - created and set up website wpn-xm.org
-    - layed out a directory structure for the project
-    - selected components	
-    - base for wpn-xm server control tray app
-    - base for wpn-xm webinterface
-    - two ISS files for standalone and bundled distribution
+------------  ----------------------------------------------------------------
+Legende:      NEW    Neues Feature            |    New Feature
+              CHG    Änderung                 |    Change
+              FIX    Fehler behoben           |    Bugfix
+              LNG    Sprachdatei aktualisiert |    Languagefile updated
+              RQM    Neue Systemanforderung   |    New Requirement
+              MOD    Neues Module             |    New Modul
+              REL    Neues Release            |    New Release
+              UPD    Aktualisierung           |    Update
+------------  ----------------------------------------------------------------
 
-Version 0.2 - tbc
+VORLAGE FÜR NEUE EINTRÄGE | TEMPLATE FOR NEW ENTRIES
+------------  ----------------------------------------------------------------
+[x.x.2007]    REL    VERSION 0.x
+------------  ----------------------------------------------------------------
+[x.x.2007]    NEW    added this n that
+[x.x.2007]    FIX    fixed this n that
+[x.x.2007]    CHG    removed this n that
+[x.x.2007]    LNG    added english language file for this n that
+_____________________________________________________________________________
+
+
+------------  ----------------------------------------------------------------
+Version 0.2 - REL    tbc
+------------  ----------------------------------------------------------------
+        
+        -->>
+              UPD    phpMyAdmin 3.4.8
+              UPD    NGINX 1.1.10
+              NEW    link for immediate redirection
+[07.12.2011]  CHG    renamed severpack to server stack
+
+------------  ----------------------------------------------------------------
+Version 0.1   REL    12. November 2011
+------------  ----------------------------------------------------------------
+
+    		      NEW	   created and set up website wpn-xm.org    		      
+                     PHP 5.3.8
+                     NGINX 1.1.7
+                     XDebug 2.1.2 (PHP Extension)
+                     MariaDB 5.3.2-beta
+                     phpMyAdmin 3.4.6-english
+                     Memcached 1.4.5
+                     memcached (PHP Extension)
+                     Webgrind
+                     Xhprof
+                     APC (PHP Extension)
+    		      NEW 	 selected components for the server stack	
+    		      NEW 	 created base for wpn-xm server control tray application
+    		      NEW 	 created base for wpn-xm webinterface
+              NEW    two ISS files, for standalone and for bundled distribution
+[12.06.2011]  NEW    layed out a directory structure for the project
+
+------------  ----------------------------------------------------------------
