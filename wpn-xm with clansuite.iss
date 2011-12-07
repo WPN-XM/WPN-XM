@@ -18,6 +18,8 @@
 //    License:  GNU/GPLv2+
 //
 
+# define DEBUG "false"
+
 # define SOURCE_ROOT AddBackslash(SourcePath);
 
 // we need to include the Sherlock Software\InnoTools\Downloader
@@ -127,9 +129,8 @@ Name: "{app}\www"
 [Code]
 // Constants and global variables
 const
-  // DEBUG Toggle
-  DEBUG = false;
-  //DEBUG = true;
+  // reassigning defined constant debug
+  DEBUG = {#DEBUG};
 
   // Define download URLs for the software packages
   // Warning: Watch the protocol (Use http, not https!), if you add download links pointing to github. 
