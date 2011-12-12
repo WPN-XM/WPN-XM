@@ -25,7 +25,7 @@ COMPONENT   VERSION LICENCE(S)         COPYRIGHT                          WEBSIT
 Base Components
 
 MariaDB     5.3.2   GNU GPL v2         © 2010-2011 Monty Program Ab.      http://mariadb.org/ + http://askmonty.org/
-NGINX       1.1.7   New BSD License    © 2002-2011 Igor Sysoev.           http://nginx.org/
+NGINX       1.1.10  New BSD License    © 2002-2011 Igor Sysoev.           http://nginx.org/
 PHP         5.3.8   PHP License        © 1999-2011 The PHP Group.         http://www.php.net/
 
 
@@ -40,7 +40,7 @@ Additional Tools
 xhProf              Apache License v2  © 2010 - 2011 Facebook.            http://pecl.php.net/package/xhprof/
                                                                           https://github.com/facebook/xhprof/
 Webgrind    1.0     New BSD License    © 2010 - J. Nygård, J. Oettinger.  https://github.com/jokkedk/webgrind/
-phpMyAdmin  3.4.6   GNU GPL v2         © 2003 - 2011 phpMyAdmin DevTeam.  http://www.phpmyadmin.net/
+phpMyAdmin  3.4.8   GNU GPL v2         © 2003 - 2011 phpMyAdmin DevTeam.  http://www.phpmyadmin.net/
 Memcached   1.4.5
 
 ------

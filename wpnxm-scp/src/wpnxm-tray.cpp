@@ -126,7 +126,7 @@ void WpnxmTray::initializeConfiguration()
 void WpnxmTray::createTrayMenu()
 {
     MainMenu = new QMenu();
-    MainMenu->setStyle(new QPlastiqueStyle);
+    //MainMenu->setStyle(new QPlastiqueStyle);
 
     // Global status
     globalStatusSubmenu = new QMenu("Global status", MainMenu);
@@ -137,7 +137,7 @@ void WpnxmTray::createTrayMenu()
     globalStatusSubmenu->addAction(QIcon(":/action_stop"), tr("Stop All"), this, SLOT(stopAll()), QKeySequence());
 
     // Nginx
-    nginxStatusSubmenu = new QMenu("Nginx status", MainMenu);
+    nginxStatusSubmenu = new QMenu("NGINX status", MainMenu);
     nginxStatusSubmenu->setIcon(QIcon(":/status_stop"));
     nginxStatusSubmenu->addAction(QIcon(":/action_reload"), tr("Reload"), this, SLOT(reloadNginx()), QKeySequence());
     nginxStatusSubmenu->addSeparator();
@@ -146,7 +146,7 @@ void WpnxmTray::createTrayMenu()
     nginxStatusSubmenu->addAction(QIcon(":/action_run"), tr("Start"), this, SLOT(runNginx()), QKeySequence());
     nginxStatusSubmenu->addAction(QIcon(":/action_stop"), tr("Stop"), this, SLOT(stopNginx()), QKeySequence());
 
-    QMenu* nginxConfigSubmenu = new QMenu("Nginx config", MainMenu);
+    QMenu* nginxConfigSubmenu = new QMenu("NGINX config", MainMenu);
     nginxConfigSubmenu->setIcon(QIcon(":/nginx"));
     nginxConfigSubmenu->addAction(tr("Open site folder"), this, SLOT(openNginxSite()), QKeySequence());
     nginxConfigSubmenu->addSeparator();

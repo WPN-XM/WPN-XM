@@ -1,187 +1,17 @@
 <?php
 include __DIR__ . DIRECTORY_SEPARATOR . 'serverpack.core.php';
+include __DIR__ . DIRECTORY_SEPARATOR . 'menu.core.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>WPИ-XM Serverpack for Windows</title>
+    <title>WPИ-XM Serverstack for Windows</title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="WPИ-XM Serverpack for Windows - Webinterface.">
     <link rel="shortcut icon" href="http://wpn-xm.org/favicon.ico" />
-    <style type="text/css">
-    /*<![CDATA[*/
-        body
-        {
-            margin: 0;
-            padding: 0;
-            font-family:  verdana, tahoma, arial, geneva, helvetica, sans-serif;
-            background: #e7e7e7;
-            font-size: 65%; /* Resets 1em to 10px */
-            font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-            color: #333;
-            text-align: center;
-        }
-
-        div.page-centered {
-            position: relative;
-            margin: 0 auto;
-            max-width: 1102px;
-            min-width: 852px; /*930px;*/
-            text-align: left;
-            /*border: 1px solid black;*/
-        }
-
-        div.content-centered {
-            /*border: 1px dotted red;*/
-            margin-left: auto;
-            margin-right: auto;
-            display: inline-block;
-        }
-
-        img
-        {
-            border: 0px;
-        }
-
-        .red {
-            color: red;            
-        }
-
-        .resourceheader
-        {
-            margin-left:    10px;
-            text-align:     left;
-            font-size:      12px;
-        }
-
-
-        .resourceheader2
-        {
-            text-align:     left;
-            font-size:      12px;
-        }
-
-        .td-with-image
-        {
-            border-right:   1px dotted #B4B4B4;
-            padding-right:  10px;
-            width:          55px;
-        }
-
-        #footer
-        {
-            font-family: verdana, tahoma;
-            font-size: 9px;
-            text-align: center;
-        }
-
-        .cs-message
-        {
-            background: none repeat scroll 0 0 #CDCDCD;
-            border-radius: 8px 8px 8px 8px;
-            padding: 5px;
-            margin-top: 10px;
-        }
-
-        .cs-message-content
-        {
-            background: none repeat scroll 0 0 #F4F4F4;
-            border: 1px solid #A7A7A7;
-            border-radius: 6px 6px 6px 6px;
-            padding: 10px;
-            margin-top: 3px;
-            margin-bottom: 2px;
-            width: 340px;
-            height: 100px;
-            text-align: left;
-            min-height: 152px;
-        }
-
-        .cs-message h3
-        {
-            margin: 5px;
-            font-size: 13px;
-        }
-
-        .res-header-icon
-        {
-            vertical-align: text-top;
-        }
-
-        h1, h2 {
-            text-shadow: 0 1px #FFFFFF;
-        }
-
-        .horizontal-rule-light, h2, hr {
-            border-bottom: 1px solid #BBBBBB;
-            box-shadow: 0 1px 0 white;
-            padding-bottom: 10px;
-        }
-
-        .aButton {
-        	background-color:transparent;
-        	-moz-border-radius:4px;
-        	-webkit-border-radius:4px;
-        	border-radius:4px;
-        	border:1px solid #a7a7a7;
-        	display:inline-block;
-        	color:#777777;
-        	font-family:Arial;
-        	font-size:12px;
-        	font-weight:bold;
-        	padding:3px 14px;
-        	text-decoration:none;
-        	margin-left: 3px;
-        	margin-top: 3px;
-        	cursor: pointer;
-        }
-        .aButton:active {
-        	position:relative;
-        	top:1px;
-        }
-        .aButton:hover {
-            border-color: #777;
-            box-shadow: 1px 1px #999999;
-            color: #333;
-            outline: 0 none;
-        }
-        /* @todo: hovering the inner three rows with data, not the header, not the buttons;
-        table.cs-message-content tr:hover {
-            background-color: #ddd;
-        }*/
-        a:hover {
-            color:#114477;
-            text-decoration:underline;
-        }
-        a:hover {
-            color:red;
-            text-decoration:underline;
-        }
-        a, a:link, a:visited {
-            text-decoration:none;
-        }
-        a, h2 a:hover, h3 a:hover {
-            color:#0066CC;
-            text-decoration:none;
-        }
-        a, a:link, a:visited {
-            text-decoration:none;
-        }
-        hr.footer-line {margin-top: 50px; width: 22%;}
-        br.clear {clear:both;}
-        div.server-environment-right-box {float:left; margin-left: 2em;}
-        td.width-42 {width:42%;}
-        td.width-25 {width:25%;}
-        .left { text-align: left; }
-        .right { text-align: right; }
-        .center { text-align: center; }
-        .bold {font-weight: bold}
-        div.server-software-left-box {float:left; margin-right: 2em;}
-        h1.headline {margin-top: 40px; margin-bottom: 30px; font-size: 18px;}
-        /*]]>*/
-    </style>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
 </head>
 <body>
 
@@ -194,11 +24,14 @@ include __DIR__ . DIRECTORY_SEPARATOR . 'serverpack.core.php';
             <!-- Headline -->
             <h1 class="headline">
                 WPИ-XM<br/>
-                Serverpack for Windows<br/>
-                <small>Version 0.1b</small>
+                Serverstack for Windows<br/>
+                <small>Version 0.2</small>
             </h1>
 
             <div class="content-centered">
+ 
+            <!-- Top Menu Navigation -->
+            <?php Menu::render(); ?>
 
             <!-- Server Software (left box) -->
             <div class="server-software-left-box">
@@ -473,7 +306,7 @@ include __DIR__ . DIRECTORY_SEPARATOR . 'serverpack.core.php';
 <br class="clear" />
 
 <div id="footer">
-    <hr class="footer-line" />
+    <hr class="footer-line"/>
     <p>&copy; 2010-<?php echo date("Y"); ?> by Jens-Andr&#x00E9; Koch Softwaresystemtechnik.
         <br />
     </p>
