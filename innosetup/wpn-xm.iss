@@ -20,7 +20,7 @@
 # define SOURCE_ROOT AddBackslash(SourcePath);
 
 // we need to include the Sherlock Software\InnoTools\Downloader
-# include SOURCE_ROOT + "bin\InnoToolsDownloader\it_download.iss"
+# include SOURCE_ROOT + "..\bin\InnoToolsDownloader\it_download.iss"
 
 [Setup]
 AppId={{8E0B8E63-FF85-4B78-9C7F-109F905E1D3B}}
@@ -43,13 +43,13 @@ CreateAppDir=true
 ShowLanguageDialog=no
 BackColor=clBlack
 VersionInfoVersion=0.1
-SetupIconFile={#SOURCE_ROOT}bin\icons\Setup.ico
+SetupIconFile={#SOURCE_ROOT}..\bin\icons\Setup.ico
 //WizardImageFile={#SOURCE_ROOT}bin\icons\wizardimage.bmp
 //WizardSmallImageFile={#SOURCE_ROOT}bin\icons\wizardsmallimage.bmp
 
 [Languages]
 Name: en; MessagesFile: compiler:Default.isl
-//Name: de; MessagesFile: compiler:languages\German.isl
+Name: de; MessagesFile: compiler:languages\German.isl
 
 [Types]
 Name: "full"; Description: "Full installation"
@@ -70,23 +70,23 @@ Name: "phpmyadmin"; Description: "phpMyAdmin - MySQL database administration web
 
 [Files]
 // tools
-Source: "bin\UnxUtils\unzip.exe"; DestDir: "{tmp}"; Flags: dontcopy
-Source: "bin\HideConsole\RunHiddenConsole.exe"; DestDir: "{app}\bin\tools\"
-Source: "bin\killprocess\Process.exe"; DestDir: "{app}\bin\tools\"
-Source: "bin\cleanup-mysql-5.5.15-win32.bat"; DestDir: "{tmp}"
+Source: "..\bin\UnxUtils\unzip.exe"; DestDir: "{tmp}"; Flags: dontcopy
+Source: "..\bin\HideConsole\RunHiddenConsole.exe"; DestDir: "{app}\bin\tools\"
+Source: "..\bin\killprocess\Process.exe"; DestDir: "{app}\bin\tools\"
+Source: "..\bin\cleanup-mysql-5.5.15-win32.bat"; DestDir: "{tmp}"
 // incorporate the whole "www" folder into the setup
-Source: "www\*"; DestDir: "{app}\www";  Flags: recursesubdirs; Excludes: "*\nbproject*"
+Source: "..\www\*"; DestDir: "{app}\www";  Flags: recursesubdirs; Excludes: "*\nbproject*"
 // incorporate several startfiles
-Source: "startfiles\administration.url"; DestDir: "{app}"
-Source: "startfiles\localhost.url"; DestDir: "{app}"
-Source: "startfiles\start-wpnxm.exe"; DestDir: "{app}"
-Source: "startfiles\stop-wpnxm.exe"; DestDir: "{app}"
-Source: "startfiles\status-wpnxm.bat"; DestDir: "{app}"
+Source: "..\startfiles\administration.url"; DestDir: "{app}"
+Source: "..\startfiles\localhost.url"; DestDir: "{app}"
+Source: "..\startfiles\start-wpnxm.exe"; DestDir: "{app}"
+Source: "..\startfiles\stop-wpnxm.exe"; DestDir: "{app}"
+Source: "..\startfiles\status-wpnxm.bat"; DestDir: "{app}"
 // config files
-Source: "configs\php.ini"; DestDir: "{app}\bin\php"
-Source: "configs\nginx.conf"; DestDir: "{app}\bin\nginx\conf"
-Source: "configs\vhosts.conf"; DestDir: "{app}\bin\nginx\conf"
-Source: "configs\my.ini"; DestDir: "{app}\bin\mariadb"
+Source: "..\configs\php.ini"; DestDir: "{app}\bin\php"
+Source: "..\configs\nginx.conf"; DestDir: "{app}\bin\nginx\conf"
+Source: "..\configs\vhosts.conf"; DestDir: "{app}\bin\nginx\conf"
+Source: "..\configs\my.ini"; DestDir: "{app}\bin\mariadb"
 
 [Icons]
 Name: "{group}\Start WPN-XM"; Filename: "{app}\start-wpnxm.exe"
