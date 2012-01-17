@@ -31,7 +31,7 @@ Source: ..\bin\InnoToolsDownloader\itdownload.dll; Flags: dontcopy; DestDir: {tm
           Several small GUI fixes.
   0.3.2 - Minor tweaks to the English language file and the translation example script (example4.iss)
           Added Dutch translation by Hilbrand Edskes
-          Added French translation by Néo
+          Added French translation by Nï¿½o
   0.3.1 - Added language file examples, fixed several missing language strings
           Preliminary support for proxy server autodetection
           Allows the size of a file to be queried with ITD_GetFileSize
