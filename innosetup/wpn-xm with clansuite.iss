@@ -197,7 +197,7 @@ const
   // Define download URLs for the software packages
   // Warning: Watch the protocol (Use http, not https!), if you add download links pointing to github.
   URL_nginx             = 'http://www.nginx.org/download/nginx-1.2.1.zip';
-  URL_php               = 'http://windows.php.net/downloads/releases/php-5.4.3-nts-Win32-VC9-x86.zip';
+  URL_php               = 'http://windows.php.net/downloads/releases/php-5.4.4-nts-Win32-VC9-x86.zip';
   URL_mariadb           = 'http://mirror3.layerjet.com/mariadb/mariadb-5.5.24/windows/mariadb-5.5.24-win32.zip';
   URL_phpext_xdebug     = 'http://xdebug.org/files/php_xdebug-2.2.0RC2-5.4-vc9-nts.dll';
   // pierre's APC is buggy, see https://bugs.php.net/bug.php?id=61984
