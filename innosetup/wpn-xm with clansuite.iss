@@ -196,27 +196,27 @@ const
 
   // Define download URLs for the software packages
   // Warning: Watch the protocol (Use http, not https!), if you add download links pointing to github.
-  URL_nginx             = 'http://www.nginx.org/download/nginx-1.2.1.zip';
-  URL_php               = 'http://windows.php.net/downloads/releases/php-5.4.4-nts-Win32-VC9-x86.zip';
-  URL_mariadb           = 'http://mirror3.layerjet.com/mariadb/mariadb-5.5.24/windows/mariadb-5.5.24-win32.zip';
-  URL_phpext_xdebug     = 'http://xdebug.org/files/php_xdebug-2.2.0RC2-5.4-vc9-nts.dll';
+  URL_nginx             = 'http://www.wpn-xm.org/mirror.php?s=nginx';
+  URL_php               = 'http://www.wpn-xm.org/mirror.php?s=php';
+  URL_mariadb           = 'http://www.wpn-xm.org/mirror.php?s=mariadb';
+  URL_phpext_xdebug     = 'http://www.wpn-xm.org/mirror.php?s=phpext_xdebug';
   // pierre's APC is buggy, see https://bugs.php.net/bug.php?id=61984
   //URL_phpext_apc        = 'http://downloads.php.net/pierre/php_apc-3.1.10-5.4-vc9-x86.zip';
-  URL_phpext_apc        = 'http://wpn-xm.org/files/php_apc-3.1.10-5.4-vc9-x86-xp.zip';
-  URL_webgrind          = 'http://webgrind.googlecode.com/files/webgrind-release-1.0.zip';
+  URL_phpext_apc        = 'http://www.wpn-xm.org/mirror.php?s=phpext_apc';
+  URL_webgrind          = 'http://www.wpn-xm.org/mirror.php?s=webgrind';
   // Leave the original url of xhprof in here ! we are fetching from paul reinheimers fork !
   //URL_xhprof          = 'http://nodeload.github.com/facebook/xhprof/zipball/master';
-  URL_xhprof            = 'http://nodeload.github.com/preinheimer/xhprof/zipball/master';
-  URL_memcached         = 'http://downloads.northscale.com/memcached-1.4.5-x86.zip';
-  URL_phpext_memcached  = 'http://downloads.php.net/pierre/php_memcache-2.2.6-5.3-vc9-x86.zip';
-  URL_phpext_zeromq     = 'http://snapshot.zero.mq/download/win32/php53-ext/php-zmq-20111011_12-39.zip';
-  URL_phpmyadmin        = 'http://netcologne.dl.sourceforge.net/project/phpmyadmin/phpMyAdmin/3.4.9/phpMyAdmin-3.4.9-english.zip';
-  URL_adminer           = 'http://downloads.sourceforge.net/adminer/adminer-3.3.4.php';
-  URL_junction          = 'http://download.sysinternals.com/files/Junction.zip';
-  URL_pear              = 'http://pear.php.net/go-pear.phar';
-  URL_wpnxmscp          = 'http://wpn-xm.org/files/wpn-xm-scp-0.3.0.zip';
+  URL_xhprof            = 'http://www.wpn-xm.org/mirror.php?s=xhprof';
+  URL_memcached         = 'http://www.wpn-xm.org/mirror.php?s=memcached';
+  URL_phpext_memcached  = 'http://www.wpn-xm.org/mirror.php?s=phpext_memcache';
+  URL_phpext_zeromq     = 'http://www.wpn-xm.org/mirror.php?s=phpext_zeromq';
+  URL_phpmyadmin        = 'http://www.wpn-xm.org/mirror.php?s=phpmyadmin';
+  URL_adminer           = 'http://www.wpn-xm.org/mirror.php?s=adminer';
+  URL_junction          = 'http://www.wpn-xm.org/mirror.php?s=junction';
+  URL_pear              = 'http://www.wpn-xm.org/mirror.php?s=pear';
+  URL_wpnxmscp          = 'http://www.wpn-xm.org/mirror.php?s=wpnxmscp';
   // Latest Clansuite Version from Gitub (svnsync) as ZIP
-  URL_Clansuite         = 'http://nodeload.github.com/jakoch/Clansuite/zipball/svnsync';
+  URL_Clansuite         = 'http://www.wpn-xm.org/mirror.php?s=clansuite';
 
   // Define file names for the downloads
   Filename_nginx            = 'nginx.zip';
