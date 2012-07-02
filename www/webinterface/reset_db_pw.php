@@ -45,7 +45,7 @@ if($s == "change" && !empty($newPW)){
 	$stdOut .= '<input type="button" onclick="window.close();" value="close" />';
 }
 else{
-	$stdOut = date('H:i:s') . '
+	$stdOut = '
 	<form style="width:400px;" action="' . WPNXM_WEBINTERFACE_ROOT . basename( __FILE__ ) . '?check=change" method="POST" >
 	<fieldset><legend>set new ROOT password for mariadb-server</legend>
 		<br/><input type="text" name="newPW"><br/><br/>
