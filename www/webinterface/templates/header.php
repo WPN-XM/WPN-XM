@@ -70,10 +70,11 @@ include dirname(__DIR__) . '/php/bootstrap.php';
         </h1>
 
         <?php
-            include WPNXM_TEMPLATE . 'htmlelements.php';
-
-            HtmlElements::renderMenu();
-            HtmlElements::renderWelcome();
+        	if(!defined('WPNXM_NON_MENUE_HEADER')){
+	            include WPNXM_TEMPLATE . 'htmlelements.php';
+	            HtmlElements::renderMenu();
+            	HtmlElements::renderWelcome();
+        	}
         ?>
 
         <div class="content-centered">

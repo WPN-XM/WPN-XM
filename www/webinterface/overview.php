@@ -266,7 +266,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                            <?php if(!is_file(WPNXM_DIR . 'logs\mariadb_error.log'))
                                  { echo "onclick=\"alert('MariaDB Error Log not available. File not found.'); return false;\""; } ?>
                            href="<?php echo WPNXM_WEBINTERFACE_ROOT . 'openfile.php?file=mariadb-error-log'; ?>">Show Log</a>
-                        <span class="aButton">Reset Password</span>
+                        <a class="aButton" target="_blank" onclick='window.open("<?php echo WPNXM_WEBINTERFACE_ROOT; ?>reset_db_pw.php", "Zweitfenster", "innerWidth=500,innerHeight=400,scrollbars=no");'>Reset Password</a>
                      </td>
                    </tr>
                    </table>
@@ -320,7 +320,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                      <td class="right">localhost:9000</td>
                    </tr>
                    <tr>
-                     <td>Installed & Configured</td>
+                     <td>Installed &amp; Configured</td>
                      <td class="right"><?php echo Wpnxm_Serverstack::assertExtensionInstalled('xdebug');?></td>
                    </tr>
                    <tr>
