@@ -32,6 +32,7 @@
     * @link       http://wpn-xm.org/
     */
 
+
 // common WPN-XM bootstrap file with constants, etc.
 include __DIR__ . '/php/bootstrap.php';
 include WPNXM_TEMPLATE . 'header.php';
@@ -52,7 +53,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                             </td>
                             <td>
                                 <div class="resourceheader">
-                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/nginx.png" alt="Report Icon" />
+                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/report.png" alt="Report Icon" />
                                         <a href="http://nginx.org/">
                                             <b>NGINX</b>
                                         </a>
@@ -74,7 +75,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                             </td>
                             <td>
                                 <div class="resourceheader">
-                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/php.png" alt="Report Icon" />
+                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/report.png" alt="Report Icon" />
                                         <a href="http://php.net/">
                                             <b>PHP</b>
                                         </a>
@@ -96,7 +97,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                             </td>
                             <td>
                                 <div class="resourceheader">
-                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/mariadb.png" alt="Report Icon" />
+                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/report.png" alt="Report Icon" />
                                         <a href="http://mariadb.org/">
                                             <b>MariaDB</b>
                                         </a>
@@ -140,7 +141,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                             </td>
                             <td>
                                 <div class="resourceheader">
-                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/xdebug.png" alt="Report Icon" />
+                                    <img class="res-header-icon" src="<?php WPNXM_WEBINTERFACE_ROOT ?>img/report.png" alt="Report Icon" />
                                         <a href="http://xdebug.org/">
                                             <b>Xdebug</b>
                                         </a>
@@ -262,7 +263,7 @@ include WPNXM_PHP_DIR . 'serverstack.php';
                            <?php if(!is_file(WPNXM_DIR . 'logs\mariadb_error.log'))
                                  { echo "onclick=\"alert('MariaDB Error Log not available. File not found.'); return false;\""; } ?>
                            href="<?php echo WPNXM_WEBINTERFACE_ROOT . 'openfile.php?file=mariadb-error-log'; ?>">Show Log</a>
-                        <span class="aButton">Reset Password</span>
+                        <a class="aButton" target="_blank" onclick='window.open("<?php echo WPNXM_WEBINTERFACE_ROOT; ?>reset_db_pw.php", "Zweitfenster", "innerWidth=500,innerHeight=400,scrollbars=no");'>Reset Password</a>
                      </td>
                    </tr>
                    </table>
