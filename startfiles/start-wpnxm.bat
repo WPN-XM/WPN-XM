@@ -1,5 +1,9 @@
 @echo off
 
+if exist "%cd%\temp" (
+	RD "%cd%\temp\" /S /Q
+)
+
 if not exist "%cd%\temp" (
     echo Creating Directories for Temporary Files...
     mkdir "%cd%\temp"
