@@ -1,4 +1,6 @@
 == WPИ-XM 
+
+image:https://badges.gitter.im/WPN-XM/WPN-XM.svg[link="https://gitter.im/WPN-XM/WPN-XM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"]
 *WPИ-XM is a free and open-source web server solution stack for professional PHP development on Windows.*
 
 image:https://travis-ci.org/WPN-XM/WPN-XM.svg["Build Status",link="https://travis-ci.org/WPN-XM/WPN-XM"]
