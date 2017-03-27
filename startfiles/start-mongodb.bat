@@ -27,6 +27,12 @@ IF NOT EXIST "%~dp0logs\mongodb.log" (
     echo. 2>"%~dp0logs\mongodb.log"
 )
 
+IF EXIST "%cd%\data\mongod.lock" (
+    echo.
+    echo Deleting previous .lock file leved from last unclean MongoDB shutdown...
+    del 2>"%cd%\data\mongod.lock"
+)
+
 echo.
 echo Starting MongoDB
      %~dp0bin\mongodb\bin\mongod.exe --config "%~dp0bin\mongodb\mongodb.conf" --logpath "%~dp0logs\mongodb.log" --dbpath "%~dp0bin\mongodb\data\db"
