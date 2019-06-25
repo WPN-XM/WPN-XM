@@ -150,7 +150,6 @@ Source: ..\startfiles\composer.bat; DestDir: {app}\bin\composer; Components: com
 Source: ..\startfiles\console.bat; DestDir: {app}; Components: conemu
 Source: ..\startfiles\pickle.bat; DestDir: {app}\bin\pickle; Components: pickle
 Source: ..\startfiles\generate-certificate.bat; DestDir: {app}\bin\openssl; Components: openssl
-Source: ..\startfiles\install-phpunit.bat; DestDir: {app}\bin\php\
 Source: ..\startfiles\update-phars.bat; DestDir: {app}\bin\php\
 Source: ..\startfiles\reset-db-pw.bat; DestDir: {app}
 Source: ..\startfiles\restart.bat; DestDir: {app}
